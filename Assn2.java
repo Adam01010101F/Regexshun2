@@ -5,7 +5,7 @@ public class Assn2{
     public static void main (String[] args){
         String fLoc;
         File file;
-        BufferedReader reader;
+        BufferedReader reader = null;
         Scanner cin = new Scanner(System.in);
             try{
             if(args.length == 0){
@@ -25,8 +25,10 @@ public class Assn2{
             }
         }catch(Exception e){
             e.printStackTrace();
-        }   
-
-        
+        }finally{
+            try{
+                reader.close();
+            }catch(Exception e){e.printStackTrace();}
+        }
         }
 }
