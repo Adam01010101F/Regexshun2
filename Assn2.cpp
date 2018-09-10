@@ -9,18 +9,16 @@ int main(){
     std::string test = "$**2,345.67";
     try{    
         while(input>>test){    //input.is_open() && !input.eof()
-            // std::getline(input, test);
             std::cout<<test<<std::endl;
             if(std::regex_match(test, r)){
                 std::cout<<"Match!\n";
             }else{
                 std::cout<<"Fail!\n";
             }
-
         }
     }catch(int e){
-        std::cout<<"You caught bug, "<<e<<std::endl;
+        std::cout<<"You caught a bug, "<<e<<std::endl;
     }
     input.close();
-    
+    return 0;
 }
