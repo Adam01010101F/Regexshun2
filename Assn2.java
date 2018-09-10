@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.Scanner;
 
+//Known Bug: Currently Accepts ',' anywhere before '.'
+
 public class Assn2{
     public static void main (String[] args){
         String fLoc;
