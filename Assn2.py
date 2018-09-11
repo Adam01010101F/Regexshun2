@@ -4,12 +4,12 @@
 import re
 
 if __name__=="__main__":
-    regex = "\\$(\\*)*[1-9](\\d?\\d?,?)*.\\d\\d"
+    regex = "\\$(\\*)*(([1-9](\\d{0,2},?)*)|0)\\.\\d{0,2}"
     with open("a2_input.txt") as file:
         for line in file:
             if  re.match(regex, line):
                 print ("Match!")
             else:
-                print(line +"fail!")
+                print("Fail!")
     if (file.closed==False):
         file.close

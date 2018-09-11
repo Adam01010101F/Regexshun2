@@ -17,7 +17,7 @@ public class Assn2{
             else
                 fLoc = args[0];
             reader = new BufferedReader(new FileReader(fLoc));
-            String regex = "\\$(\\*)*(([1-9](\\d?\\d?,?)*)|0).\\d\\d"; //"$(\\*)*(0|([1-9]\\d*),*)*.\\d{2}";
+            String regex = "\\$(\\*)*(([1-9](\\d{0,2},?)*)|0)\\.\\d{0,2}"; //"$(\\*)*(0|([1-9]\\d*),*)*.\\d{2}";
             // String testString = "$**022,045.67"; 
             while (reader.ready()){
                 if(reader.readLine().matches(regex))
