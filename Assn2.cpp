@@ -3,9 +3,14 @@
 #include <fstream>
 #include <regex>
 
-int main(){
-    std::ifstream input("a2_input.txt");
-    std::regex r ("\\$(\\*)*(([1-9](\\d{0,2},?)*)|0)\\.\\d{0,2}");
+int main(int argc, char* argv[]){
+    std::ifstream input;
+    if(argc>1){
+        input.open(argv[1]) ;
+    }else{
+        input.open("a2_input.txt");
+    }
+    std::regex r ("\\$(\\*)*(([1-9](\\d|\\d{2})?(,\\d{3})*)|0)\\.\\d{2}");
     std::string test = "$**2,345.67";
     try{    
         while(input>>test){    //input.is_open() && !input.eof()

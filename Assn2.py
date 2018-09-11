@@ -1,14 +1,18 @@
 # Known Bug: Currently Accepts ',' anywhere before '.'
 # Known Bug: Doesn't accept cents only
 
-import re
+import re, sys
 
 if __name__=="__main__":
-    regex = "\\$(\\*)*(([1-9](\\d{0,2},?)*)|0)\\.\\d{0,2}"
-    with open("a2_input.txt") as file:
+    target = "a2_input.txt"
+    if(len(sys.argv)>1):
+        target = sys.argv[1]
+        print("CLI entry")
+    regex = "\\$(\\*)*(([1-9](\\d|\\d{2})?(,\\d{3})*)|0)\\.\\d{2,2}"
+    with open(target) as file:
         for line in file:
             if  re.match(regex, line):
-                print ("Match!")
+                print (line + "Match!")
             else:
                 print("Fail!")
     if (file.closed==False):

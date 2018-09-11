@@ -2,4 +2,4 @@ Part 1
 digit = 0-9
 nzDig = 1-9
 
-"$'*'*(0|((nzDig digit* digit*),*)*.digit digit"
+"\$(\*)*((\nzDig(\d|\d\d)?(\,\d\d\d)*)|0)\.\d\d"
